@@ -1,0 +1,11 @@
+INDEX VERSION 1.4+C:\Kartik_Workspace_DayTrader\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+144068521.index
+1892506246.index
+2152519875.index
+1043378316.index
+86204970.index
+672672319.index
+4187664860.index
+3374056910.index
+248375187.index
+1642965629.index

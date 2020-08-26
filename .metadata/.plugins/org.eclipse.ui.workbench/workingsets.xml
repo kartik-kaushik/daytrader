@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1590314352630_0" label="Java Main Sources" name="Java Main Sources">
+<item elementID="=daytrader-utilities/src\/main\/java" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=daytrader-utilities/src\/main\/resources" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=daytrader-accounts/src\/main\/java" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=daytrader-accounts/src\/main\/resources" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=daytrader-entities/src\/main\/java" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=daytrader-entities/src\/main\/resources" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1590314352653_1" label="Java Test Sources" name="Java Test Sources">
+<item elementID="=daytrader-utilities/src\/test\/java" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=daytrader-accounts/src\/test\/java" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=daytrader-entities/src\/test\/java" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1590314509909_2" label="daytrader-accountsapp" name="daytrader-accountsapp">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/daytrader-entities" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/daytrader-utilities" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/daytrader-accountsapp" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/daytrader-accounts" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1596459657084_4" label="daytrader-gatewayapp" name="daytrader-gatewayapp">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/daytrader-gatewayapp" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/daytrader-gateway" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1596459780948_5" label="daytrader-portfoliosapp" name="daytrader-portfoliosapp">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/daytrader-portfolios" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/daytrader-portfoliosapp" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1596459833732_6" label="daytrader-quotesapp" name="daytrader-quotesapp">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/daytrader-quotes" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/daytrader-quotesapp" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1596459894180_7" label="daytrader-webapp" name="daytrader-webapp">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/daytrader-web" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/daytrader-webapp" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1590317078518_3" label="Window Working Set" name="Aggregate for window 1590317078517"/>
+</workingSetManager>
