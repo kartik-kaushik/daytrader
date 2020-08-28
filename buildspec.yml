@@ -10,7 +10,8 @@ phases:
 #      - $(aws ecr get-login --region us-east-2 --registry-ids 732631625641)
 #      - $(aws ecr get-login-password --region us-east-2)
 #      - aws ecr get-authorization-token  --region us-east-2 | sed 's|https://||'
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $REPOSITORY_URI
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 416592256572.dkr.ecr.us-east-1.amazonaws.com
+       - echo 'Logged in successfully'
   build:
     commands:
       - cd daytrader-example-accountsrepo-master/daytrader-accountsapp
