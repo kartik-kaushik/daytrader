@@ -17,7 +17,7 @@ phases:
     commands:
       - echo 'build commands phase starting'
       - cd daytrader-example-accountsrepo-master/daytrader-accountsapp
-      - mvn install
+      - mvn install -DskipTests
       - cd daytrader-accounts
 #      - docker build . -t $REPOSITORY_URI/daytrader:daytrader-accounts
       - docker build -f Dockerfile -t 416592256572.dkr.ecr.us-east-1.amazonaws.com/daytrader:daytrader-accounts --build-arg APP_ARTIFACTID=daytrader-accountsapp --build-arg WAR_ARTIFACTID=daytrader-accounts --build-arg APP_VERSION=4.0.0 --build-arg EXPOSE_PORT=1443 --build-arg DATABASE_DRIVER=com.mysql.jdbc.Driver --build-arg DATABASE_URL=jdbc:mysql://tradesdb.c5ntr5qnxgp6.us-east-1.rds.amazonaws.com:3306/tradesdb --build-arg DATABASE_USERNAME=admin --build-arg DATABASE_PASSWORD=Oracle123     
@@ -26,31 +26,25 @@ phases:
       - cd ..
       - cd ..
       - cd daytrader-example-gatewayrepo-master/daytrader-example-gatewayrepo-master/daytrader-gatewayapp
-      - mvn install
+      - mvn install -DskipTests
       - cd daytrader-gateway
       - docker build . -t $REPOSITORY_URI/daytrader:daytrader-gateway
       - docker push       $REPOSITORY_URI/daytrader:daytrader-gateway
       - cd ../../../..
       - cd daytrader-example-portfoliosrepo-master/daytrader-portfoliosapp
-      - mvn install
+      - mvn install -DskipTests
       - cd daytrader-portfolios
       - docker build . -t $REPOSITORY_URI/daytrader:daytrader-portfolios
       - docker push       $REPOSITORY_URI/daytrader:daytrader-portfolios
       - cd ../../..
       - cd daytrader-example-quotesrepo-master/daytrader-example-quotesrepo-master/daytrader-quotesapp
-      - mvn install
-      - cd daytrader-quotes
-      - docker build . -t $REPOSITORY_URI/daytrader:daytrader-quotes
-      - docker push       $REPOSITORY_URI/daytrader:daytrader-quotes
-      - cd ../../..
-      - cd daytrader-example-quotesrepo-master/daytrader-example-quotesrepo-master/daytrader-quotesapp
-      - mvn install
+      - mvn install -DskipTests
       - cd daytrader-quotes
       - docker build . -t $REPOSITORY_URI/daytrader:daytrader-quotes
       - docker push       $REPOSITORY_URI/daytrader:daytrader-quotes
       - cd ../../../..
       - cd daytrader-example-webrepo-master/daytrader-example-webrepo-master/daytrader-webapp
-      - mvn install
+      - mvn install -DskipTests
       - cd daytrader-web
       - docker build . -t $REPOSITORY_URI/daytrader:daytrader-web
       - docker push       $REPOSITORY_URI/daytrader:daytrader-web
