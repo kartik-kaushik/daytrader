@@ -2463,3 +2463,47 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact mysql:mysql-c
 2020-08-28 15:03:46,371 [Worker-1556: Building workspace] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of daytrader-accounts
 2020-08-28 15:03:46,371 [Worker-1556: Building workspace] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for daytrader-accounts
 2020-08-28 15:03:46,377 [Worker-1556: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-28 15:49:13,897 [Worker-1562: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: org.apache.geronimo.daytrader.javaee6.gateway:daytrader-gateway:4.0.0 @ C:\Kartik_Workspace_DayTrader\daytrader-example-gatewayrepo-master\daytrader-example-gatewayrepo-master\daytrader-gatewayapp\daytrader-gateway\pom.xml.
+2020-08-28 15:49:17,873 [Worker-1562: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-28 15:49:17,894 [Worker-1562: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2020-08-28 15:49:18,124 [Worker-1562: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-28 15:49:18,125 [Worker-1562: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Kartik_Workspace_DayTrader\daytrader-example-gatewayrepo-master\daytrader-example-gatewayrepo-master\daytrader-gatewayapp\daytrader-gateway\src\test\resources
+2020-08-28 15:49:18,131 [Worker-1562: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-28 15:49:18,147 [Worker-1562: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2020-08-28 15:49:18,243 [Worker-1562: Building workspace] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of daytrader-gateway
+2020-08-28 15:49:18,243 [Worker-1562: Building workspace] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for daytrader-gateway
+2020-08-28 15:49:18,252 [Worker-1562: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-28 15:49:37,175 [Worker-1566: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: org.apache.geronimo.daytrader.javaee6.portfolios:daytrader-portfolios:4.0.0 @ C:\Kartik_Workspace_DayTrader\daytrader-example-portfoliosrepo-master\daytrader-portfoliosapp\daytrader-portfolios\pom.xml.
+2020-08-28 15:49:39,922 [Worker-1566: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-28 15:49:39,957 [Worker-1566: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2020-08-28 15:49:40,098 [Worker-1566: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-28 15:49:40,098 [Worker-1566: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Kartik_Workspace_DayTrader\daytrader-example-portfoliosrepo-master\daytrader-portfoliosapp\daytrader-portfolios\src\test\resources
+2020-08-28 15:49:40,103 [Worker-1566: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-28 15:49:40,116 [Worker-1566: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-08-28 15:49:40,117 [Worker-1566: Building workspace] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of daytrader-portfolios
+2020-08-28 15:49:40,117 [Worker-1566: Building workspace] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for daytrader-portfolios
+2020-08-28 15:49:40,124 [Worker-1566: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-28 15:50:09,875 [Worker-1564: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: org.apache.geronimo.daytrader.javaee6.quotes:daytrader-quotes:4.0.0 @ C:\Kartik_Workspace_DayTrader\daytrader-example-quotesrepo-master\daytrader-example-quotesrepo-master\daytrader-quotesapp\daytrader-quotes\pom.xml.
+2020-08-28 15:50:16,035 [Worker-1564: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-28 15:50:16,046 [Worker-1564: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2020-08-28 15:50:16,224 [Worker-1564: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-28 15:50:16,224 [Worker-1564: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Kartik_Workspace_DayTrader\daytrader-example-quotesrepo-master\daytrader-example-quotesrepo-master\daytrader-quotesapp\daytrader-quotes\src\test\resources
+2020-08-28 15:50:16,243 [Worker-1564: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-28 15:50:16,262 [Worker-1564: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-08-28 15:50:16,263 [Worker-1564: Building workspace] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of daytrader-quotes
+2020-08-28 15:50:16,263 [Worker-1564: Building workspace] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for daytrader-quotes
+2020-08-28 15:50:16,271 [Worker-1564: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-28 15:50:25,367 [Worker-1568: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: org.apache.geronimo.daytrader.javaee6:daytrader-web:4.0.0 @ C:\Kartik_Workspace_DayTrader\daytrader-example-webrepo-master\daytrader-example-webrepo-master\daytrader-webapp\daytrader-web\pom.xml.
+2020-08-28 15:50:28,909 [Worker-1568: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-28 15:50:28,910 [Worker-1568: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-08-28 15:50:28,912 [Worker-1568: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-28 15:50:28,913 [Worker-1568: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Kartik_Workspace_DayTrader\daytrader-example-webrepo-master\daytrader-example-webrepo-master\daytrader-webapp\daytrader-web\src\test\resources
+2020-08-28 15:50:28,916 [Worker-1568: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-28 15:50:28,947 [Worker-1568: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-08-28 15:50:28,948 [Worker-1568: Building workspace] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of daytrader-web
+2020-08-28 15:50:28,948 [Worker-1568: Building workspace] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for daytrader-web
+2020-08-28 15:50:28,955 [Worker-1568: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-28 15:50:49,353 [Worker-1564: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-28 15:50:49,363 [Worker-1564: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2020-08-28 15:50:49,525 [Worker-1564: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-28 15:50:49,526 [Worker-1564: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Kartik_Workspace_DayTrader\daytrader-example-webrepo-master\daytrader-example-webrepo-master\daytrader-webapp\daytrader-web\src\test\resources

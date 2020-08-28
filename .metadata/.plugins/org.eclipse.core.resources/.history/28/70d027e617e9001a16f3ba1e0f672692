@@ -19,50 +19,35 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<parent>
-        <groupId>org.apache.geronimo.daytrader.javaee6.quotes</groupId>
-        <artifactId>daytrader-quotesapp</artifactId>
+        <groupId>org.apache.geronimo.daytrader.javaee6.gateway</groupId>
+        <artifactId>daytrader-gatewayapp</artifactId>
         <version>4.0.0</version>
     </parent>
 	
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>daytrader-quotes</artifactId>
+	<artifactId>daytrader-gateway</artifactId>
 	<packaging>war</packaging>
-    
-	<dependencies>
 	
+	<dependencies>
+
 		<!-- Module Dependencies -->
-		
+
 	    <dependency>
-            <groupId>org.apache.geronimo.daytrader.javaee6.quotes</groupId>
+            <groupId>org.apache.geronimo.daytrader.javaee6.gateway</groupId>
             <artifactId>daytrader-utilities</artifactId>            
             <scope>compile</scope>         
             <version>4.0.0</version>
         </dependency>        
 		
         <dependency>
-            <groupId>org.apache.geronimo.daytrader.javaee6.quotes</groupId>
+            <groupId>org.apache.geronimo.daytrader.javaee6.gateway</groupId>
             <artifactId>daytrader-entities</artifactId>            
             <scope>compile</scope>    
 			<version>4.0.0</version>
         </dependency>
-		
-		<!-- Database Dependencies -->
-		
-	    <!-- <dependency>
-		    <groupId>org.apache.derby</groupId>
-		    <artifactId>derby</artifactId>
-		    <version>10.14.1.0</version>
-	    </dependency> -->
-	    
-	    <dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.17</version>
-			<scope>runtime</scope>
-		</dependency>
-		
+
 		<!-- Swagger Dependencies -->
-		
+
 	    <dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
@@ -75,8 +60,8 @@
 			<version>2.9.2</version>
 		</dependency>
 
-		<!-- Must Precede Third Party Dependencies -->
-		
+		<!-- Must Precede Third Party Dependencies -->	
+
 	    <dependency>
 		    <groupId>org.apache.tomcat</groupId>
 		    <artifactId>tomcat-dbcp</artifactId>
@@ -127,7 +112,7 @@
         </dependency>
 				
 		<!-- Third Party Dependencies -->
-	
+		
 		<dependency>
 			<groupId>commons-digester</groupId>
 			<artifactId>commons-digester</artifactId>
@@ -144,6 +129,7 @@
 		<dependency>
             <groupId>commons-collections</groupId>
             <artifactId>commons-collections</artifactId>
+            <scope>compile</scope>
         </dependency>       
 
 		<!-- REST Client Dependencies -->
@@ -154,7 +140,7 @@
             <version>7.0</version>
             <scope>provided</scope>
         </dependency>
-	
+		
 		<dependency>
    			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>
@@ -191,12 +177,11 @@
 		</resources>
 		
 		<plugins>
+			
         </plugins> 
-
 	</build>
 	
    	<profiles>
-  
   
         <!-- Profile to run on SpringBoot -->
   		<profile>
@@ -253,7 +238,7 @@
 						<artifactId>spring-boot-maven-plugin</artifactId>				
 						<configuration>
 							<fork>true</fork>
-							<mainClass>org.apache.geronimo.daytrader.javaee6.quotes.QuotesApplication</mainClass>
+							<mainClass>org.apache.geronimo.daytrader.javaee6.gateway.GatewayApplication</mainClass>
 						</configuration>
 					</plugin>
 					<!-- Run the integration test and verify the results -->
@@ -362,7 +347,7 @@
   			<id>kubernetes</id>
   			<properties>
   				<daytraderKeystoreFolder>${project.basedir}/src/main/resources/external/ssl</daytraderKeystoreFolder>
-				<docker.image.prefix>kakaushi</docker.image.prefix>
+				<docker.image.prefix>${user.name}</docker.image.prefix>
 				<dockerfile-maven-version>1.4.0</dockerfile-maven-version>	
 
                 <daytraderKeystoreFolder>${project.basedir}/src/main/resources/external/ssl</daytraderKeystoreFolder>
@@ -416,7 +401,7 @@
                         <artifactId>spring-boot-maven-plugin</artifactId>               
                         <configuration>
                             <fork>true</fork>
-                            <mainClass>org.apache.geronimo.daytrader.javaee6.quotes.QuotesApplication</mainClass>
+                            <mainClass>org.apache.geronimo.daytrader.javaee6.gateway.GatewayApplication</mainClass>
                         </configuration>
                     </plugin>
   			
@@ -435,17 +420,17 @@
 			        		</execution>
       					</executions>
       					<configuration>
-        					<repository>kakaushi/${project.artifactId}</repository>
+        					<repository>${docker.image.prefix}/${project.artifactId}</repository>
         					<tag>4.0.18</tag>
 				    		<buildArgs>
                                 <WAR_ARTIFACTID>${project.artifactId}</WAR_ARTIFACTID>
           						<APP_VERSION>${project.parent.version}</APP_VERSION>
                                 <APP_ARTIFACTID>${project.parent.artifactId}</APP_ARTIFACTID>
-                                <EXPOSE_PORT>4443</EXPOSE_PORT>
-                                <DATABASE_DRIVER>com.mysql.jdbc.Driver</DATABASE_DRIVER>
-                                <DATABASE_URL>jdbc:mysql://tradesdb.c5ntr5qnxgp6.us-east-1.rds.amazonaws.com:3306/tradesdb</DATABASE_URL>
-                                <DATABASE_USERNAME>admin</DATABASE_USERNAME>
-                                <DATABASE_PASSWORD>Oracle123</DATABASE_PASSWORD>
+                                <EXPOSE_PORT>2443</EXPOSE_PORT>
+                                <DATABASE_DRIVER></DATABASE_DRIVER>
+                                <DATABASE_URL></DATABASE_URL>
+                                <DATABASE_USERNAME></DATABASE_USERNAME>
+                                <DATABASE_PASSWORD></DATABASE_PASSWORD>
 				    		</buildArgs>
 						    <useMavenSettingsForAuth>true</useMavenSettingsForAuth>
 			    		</configuration>
@@ -488,12 +473,12 @@
                         </executions>
                     </plugin>           
                     <!-- Additional bindings (executions) to setup and teardown the environment -->             
-                    <!-- <plugin>
+                    <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-antrun-plugin</artifactId>
                         <executions>
                         
-                            pre-integration-test: create the service
+                            <!-- pre-integration-test: create the service -->
                             <execution>
                                 <id>create-service</id>
                                 <phase>pre-integration-test</phase>
@@ -512,7 +497,7 @@
                                 </goals>
                             </execution>
 
-                            pre-integration-test: wait for the pod to start                                    
+                            <!-- pre-integration-test: wait for the pod to start -->                                    
                             <execution>
                                 <id>wait-for-pod-to-start</id>
                                 <phase>pre-integration-test</phase>
@@ -526,7 +511,7 @@
                                 </goals>
                              </execution>
                     
-                            post-integration-test: Delete the service
+                            <!-- post-integration-test: Delete the service -->
                             <execution>
                                 <id>delete-service</id>
                                 <phase>post-integration-test</phase>
@@ -546,12 +531,12 @@
                             </execution>
                             
                         </executions>
-                    </plugin> -->
+                    </plugin>
     				
 				</plugins>
 			</build>
 		</profile>  
-  	
-	</profiles>
 
+	</profiles>
+	
 </project>

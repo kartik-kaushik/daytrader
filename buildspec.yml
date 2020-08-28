@@ -11,7 +11,7 @@ phases:
 #      - aws ecr get-authorization-token  --region us-east-2 | sed 's|https://||'
 #      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 416592256572.dkr.ecr.us-east-1.amazonaws.com
 #      - echo 'Logged in successfully'
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $REPOSITORY_URI
+#      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $REPOSITORY_URI
       - echo 'pre build phase ends here'
 
   build:
@@ -21,34 +21,39 @@ phases:
       - mvn install -DskipTests
       - cd daytrader-accounts
 #      - docker build . -t $REPOSITORY_URI/daytrader:daytrader-accounts
-      - docker build -f Dockerfile -t 416592256572.dkr.ecr.us-east-1.amazonaws.com/daytrader:daytrader-accounts --build-arg APP_ARTIFACTID=daytrader-accountsapp --build-arg WAR_ARTIFACTID=daytrader-accounts --build-arg APP_VERSION=4.0.0 --build-arg EXPOSE_PORT=1443 --build-arg DATABASE_DRIVER=com.mysql.jdbc.Driver --build-arg DATABASE_URL=jdbc:mysql://tradesdb.c5ntr5qnxgp6.us-east-1.rds.amazonaws.com:3306/tradesdb --build-arg DATABASE_USERNAME=admin --build-arg DATABASE_PASSWORD=Oracle123 .
-      - docker push 416592256572.dkr.ecr.us-east-1.amazonaws.com/daytrader:daytrader-accounts
+      - docker build -f Dockerfile -t kakaushi/daytrader-accounts:4.0.18 --build-arg APP_ARTIFACTID=daytrader-accountsapp --build-arg WAR_ARTIFACTID=daytrader-accounts --build-arg APP_VERSION=4.0.0 --build-arg EXPOSE_PORT=1443 --build-arg DATABASE_DRIVER=com.mysql.jdbc.Driver --build-arg DATABASE_URL=jdbc:mysql://tradesdb.c5ntr5qnxgp6.us-east-1.rds.amazonaws.com:3306/tradesdb --build-arg DATABASE_USERNAME=admin --build-arg DATABASE_PASSWORD=Oracle123 .
+#      - docker push 416592256572.dkr.ecr.us-east-1.amazonaws.com/daytrader:daytrader-accounts
       - cd ..
       - cd ..
       - cd ..
       - cd daytrader-example-gatewayrepo-master/daytrader-example-gatewayrepo-master/daytrader-gatewayapp
       - mvn install -DskipTests
       - cd daytrader-gateway
-      - docker build . -t $REPOSITORY_URI/daytrader:daytrader-gateway
-      - docker push       $REPOSITORY_URI/daytrader:daytrader-gateway
+#      - docker build . -t $REPOSITORY_URI/daytrader:daytrader-gateway
+#      - docker push       $REPOSITORY_URI/daytrader:daytrader-gateway
+      - docker build -f Dockerfile -t kakaushi/daytrader-gateway:4.0.18 . 
       - cd ../../../..
       - cd daytrader-example-portfoliosrepo-master/daytrader-portfoliosapp
       - mvn install -DskipTests
       - cd daytrader-portfolios
-      - docker build . -t $REPOSITORY_URI/daytrader:daytrader-portfolios
-      - docker push       $REPOSITORY_URI/daytrader:daytrader-portfolios
+#      - docker build . -t $REPOSITORY_URI/daytrader:daytrader-portfolios
+#      - docker push       $REPOSITORY_URI/daytrader:daytrader-portfolios
+      - docker build -f Dockerfile -t kakaushi/daytrader-portfolios:4.0.18 --build-arg APP_ARTIFACTID=daytrader-portfoliosapp --build-arg WAR_ARTIFACTID=daytrader-portfolios --build-arg APP_VERSION=4.0.0 --build-arg EXPOSE_PORT=3443 --build-arg DATABASE_DRIVER=com.mysql.jdbc.Driver --build-arg DATABASE_URL=jdbc:mysql://tradesdb.c5ntr5qnxgp6.us-east-1.rds.amazonaws.com:3306/tradesdb --build-arg DATABASE_USERNAME=admin --build-arg DATABASE_PASSWORD=Oracle123 .
       - cd ../../..
       - cd daytrader-example-quotesrepo-master/daytrader-example-quotesrepo-master/daytrader-quotesapp
       - mvn install -DskipTests
       - cd daytrader-quotes
-      - docker build . -t $REPOSITORY_URI/daytrader:daytrader-quotes
-      - docker push       $REPOSITORY_URI/daytrader:daytrader-quotes
+#      - docker build . -t $REPOSITORY_URI/daytrader:daytrader-quotes
+#      - docker push       $REPOSITORY_URI/daytrader:daytrader-quotes
+      - docker build -f Dockerfile -t kakaushi/daytrader-quotes:4.0.18 --build-arg APP_ARTIFACTID=daytrader-quotesapp --build-arg WAR_ARTIFACTID=daytrader-quotes --build-arg APP_VERSION=4.0.0 --build-arg EXPOSE_PORT=4443 --build-arg DATABASE_DRIVER=com.mysql.jdbc.Driver --build-arg DATABASE_URL=jdbc:mysql://tradesdb.c5ntr5qnxgp6.us-east-1.rds.amazonaws.com:3306/tradesdb --build-arg DATABASE_USERNAME=admin --build-arg DATABASE_PASSWORD=Oracle123 .
       - cd ../../../..
       - cd daytrader-example-webrepo-master/daytrader-example-webrepo-master/daytrader-webapp
       - mvn install -DskipTests
       - cd daytrader-web
-      - docker build . -t $REPOSITORY_URI/daytrader:daytrader-web
-      - docker push       $REPOSITORY_URI/daytrader:daytrader-web
+#      - docker build . -t $REPOSITORY_URI/daytrader:daytrader-web
+#      - docker push       $REPOSITORY_URI/daytrader:daytrader-web
+      - docker build -f Dockerfile -t kakaushi/daytrader-web:4.0.18 .
+
 #      - cd ..
 #      - aws s3 cp kubernetes-manifests/account-depl.yaml         s3://ss-poc-shibu/
 #      - aws s3 cp kubernetes-manifests/account-service.yaml      s3://ss-poc-shibu/
