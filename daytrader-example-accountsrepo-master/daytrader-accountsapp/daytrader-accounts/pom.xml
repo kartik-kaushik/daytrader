@@ -485,12 +485,12 @@
                         </executions>
                     </plugin>           
                     <!-- Additional bindings (executions) to setup and teardown the environment -->             
-                    <plugin>
+                    <!-- <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-antrun-plugin</artifactId>
                         <executions>
                         
-                            <!-- pre-integration-test: create the service -->
+                            pre-integration-test: create the service
                             <execution>
                                 <id>create-service</id>
                                 <phase>pre-integration-test</phase>
@@ -509,7 +509,7 @@
                                 </goals>
                             </execution>
 
-                            <!-- pre-integration-test: wait for the pod to start -->
+                            pre-integration-test: wait for the pod to start
                             <execution>
                                 <id>wait-for-pod-to-start</id>
                                 <phase>pre-integration-test</phase>
@@ -523,7 +523,7 @@
                                 </goals>
                              </execution>
                             
-                            <!-- post-integration-test: Delete the service --> 
+                            post-integration-test: Delete the service 
                             <execution>
                                 <id>delete-service</id>
                                 <phase>post-integration-test</phase>
@@ -543,7 +543,7 @@
                             </execution>
                             
                         </executions>
-                    </plugin>
+                    </plugin> -->
     				
 				</plugins>
 			</build>

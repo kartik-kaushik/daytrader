@@ -19,13 +19,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<parent>
-        <groupId>org.apache.geronimo.daytrader.javaee6.portfolios</groupId>
-        <artifactId>daytrader-portfoliosapp</artifactId>
+        <groupId>org.apache.geronimo.daytrader.javaee6</groupId>
+        <artifactId>daytrader-webapp</artifactId>
         <version>4.0.0</version>
     </parent>
 	
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>daytrader-portfolios</artifactId>
+	<artifactId>daytrader-web</artifactId>
 	<packaging>war</packaging>
 	
 	<dependencies>
@@ -33,49 +33,34 @@
 		<!-- Module Dependencies -->
 		
 	    <dependency>
-            <groupId>org.apache.geronimo.daytrader.javaee6.portfolios</groupId>
+            <groupId>org.apache.geronimo.daytrader.javaee6</groupId>
             <artifactId>daytrader-utilities</artifactId>            
             <scope>compile</scope>         
             <version>4.0.0</version>
         </dependency>        
 		
         <dependency>
-            <groupId>org.apache.geronimo.daytrader.javaee6.portfolios</groupId>
+            <groupId>org.apache.geronimo.daytrader.javaee6</groupId>
             <artifactId>daytrader-entities</artifactId>            
             <scope>compile</scope>    
 			<version>4.0.0</version>
         </dependency>
+        
+        <!-- Swagger Dependencies -->
+        
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.9.2</version>
+        </dependency>
 		
-		<!-- Database Dependencies -->
-		
-	   <!--  <dependency>
-		    <groupId>org.apache.derby</groupId>
-		    <artifactId>derby</artifactId>
-		    <version>10.14.1.0</version>
-	    </dependency> -->
-	    
-	    <dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.17</version>
-			<scope>runtime</scope>
-		</dependency>
-		
-		<!-- Swagger Dependencies -->
-		
-	    <dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger2</artifactId>
-			<version>2.9.2</version>
-		</dependency>
-		
-	    <dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger-ui</artifactId>
-			<version>2.9.2</version>
-		</dependency>
-		
-		<!-- Must Precede Third Party Dependencies-->
+		<!-- Must Precede Third Party Dependencies -->
 		
 	    <dependency>
 		    <groupId>org.apache.tomcat</groupId>
@@ -108,7 +93,7 @@
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-web</artifactId>
 	    </dependency>
-		
+
 		<!-- 
 		spring-boot-starter-tomcat: enable an embedded Apache Tomcat 8 instance, by default. 
 		-->
@@ -117,17 +102,17 @@
 		    <artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
 	    </dependency>
-		
-		<!-- 
+	    
+	    <!-- 
 		spring-boot-starter-actuator: Enables spring boot actuator features in spring boot.
 		-->
 		<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-	
+		
 		<!-- Third Party Dependencies -->
-
+	
 		<dependency>
 			<groupId>commons-digester</groupId>
 			<artifactId>commons-digester</artifactId>
@@ -144,18 +129,18 @@
 		<dependency>
             <groupId>commons-collections</groupId>
             <artifactId>commons-collections</artifactId>
-            <scope>compile</scope>
         </dependency>       
-
-		<!-- REST Client Dependencies -->
 		
+		
+		<!-- REST Client Dependencies -->
+
        <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>7.0</version>
             <scope>provided</scope>
         </dependency>
-		
+			
 		<dependency>
    			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>
@@ -175,8 +160,8 @@
     	    <groupId>org.glassfish.jersey.core</groupId>
         	<artifactId>jersey-client</artifactId>
 		</dependency>  
-
-    </dependencies>
+		
+	</dependencies>
 
     <build>
     
@@ -191,12 +176,13 @@
 			</resource>
 		</resources>
 		
-		<plugins>
+		<plugins>			
         </plugins> 
-        
+    
 	</build>
 	
   	<profiles>
+  
   
         <!-- Profile to run on SpringBoot -->
   		<profile>
@@ -253,7 +239,7 @@
 						<artifactId>spring-boot-maven-plugin</artifactId>				
 						<configuration>
 							<fork>true</fork>
-							<mainClass>org.apache.geronimo.daytrader.javaee6.portfolios.PortfoliosApplication</mainClass>
+							<mainClass>org.apache.geronimo.daytrader.javaee6.web.Application</mainClass>
 						</configuration>
 					</plugin>
 					<!-- Run the integration test and verify the results -->
@@ -416,7 +402,7 @@
                         <artifactId>spring-boot-maven-plugin</artifactId>               
                         <configuration>
                             <fork>true</fork>
-                            <mainClass>org.apache.geronimo.daytrader.javaee6.portfolios.PortfoliosApplication</mainClass>
+                            <mainClass>org.apache.geronimo.daytrader.javaee6.web.Application</mainClass>
                         </configuration>
                     </plugin>
   			
@@ -441,11 +427,11 @@
                                 <WAR_ARTIFACTID>${project.artifactId}</WAR_ARTIFACTID>
           						<APP_VERSION>${project.parent.version}</APP_VERSION>
                                 <APP_ARTIFACTID>${project.parent.artifactId}</APP_ARTIFACTID>
-                                <EXPOSE_PORT>3443</EXPOSE_PORT>
-                                <DATABASE_DRIVER>com.mysql.jdbc.Driver</DATABASE_DRIVER>
-                                <DATABASE_URL>jdbc:mysql://tradesdb.c5ntr5qnxgp6.us-east-1.rds.amazonaws.com:3306/tradesdb</DATABASE_URL>
-                                <DATABASE_USERNAME>admin</DATABASE_USERNAME>
-                                <DATABASE_PASSWORD>Oracle123</DATABASE_PASSWORD>
+                                <EXPOSE_PORT>5443</EXPOSE_PORT>
+                                <DATABASE_DRIVER></DATABASE_DRIVER>
+                                <DATABASE_URL></DATABASE_URL>
+                                <DATABASE_USERNAME></DATABASE_USERNAME>
+                                <DATABASE_PASSWORD></DATABASE_PASSWORD>
 				    		</buildArgs>
 						    <useMavenSettingsForAuth>true</useMavenSettingsForAuth>
 			    		</configuration>
@@ -488,12 +474,12 @@
                         </executions>
                     </plugin>           
                     <!-- Additional bindings (executions) to setup and teardown the environment -->             
-                    <!-- <plugin>
+                    <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-antrun-plugin</artifactId>
                         <executions>
                         
-                            pre-integration-test: create the service
+                            <!-- pre-integration-test: create the service -->
                             <execution>
                                 <id>create-service</id>
                                 <phase>pre-integration-test</phase>
@@ -512,7 +498,7 @@
                                 </goals>
                             </execution>
 
-                            pre-integration-test: wait for the pod to start                                    
+                            <!-- pre-integration-test: wait for the pod to start -->                                    
                             <execution>
                                 <id>wait-for-pod-to-start</id>
                                 <phase>pre-integration-test</phase>
@@ -526,7 +512,7 @@
                                 </goals>
                              </execution>
                     
-                            post-integration-test: Delete the service
+                            <!-- post-integration-test: Delete the service -->
                             <execution>
                                 <id>delete-service</id>
                                 <phase>post-integration-test</phase>
@@ -544,9 +530,9 @@
                                     <goal>run</goal>
                                 </goals>
                             </execution>
-                            
+
                         </executions>
-                    </plugin> -->
+                    </plugin>
     				
 				</plugins>
 			</build>
