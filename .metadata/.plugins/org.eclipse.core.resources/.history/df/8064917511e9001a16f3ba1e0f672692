@@ -290,12 +290,12 @@
                         </executions>
                     </plugin>           
                     <!-- Additional bindings (executions) to setup and teardown the environment -->             
-<!--                     <plugin>
+                    <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-antrun-plugin</artifactId>
                         <executions>
                         
-                            pre-integration-test: start the application
+                            <!-- pre-integration-test: start the application -->
                             <execution>
                                 <id>statup-application</id>
                                 <phase>pre-integration-test</phase>
@@ -314,7 +314,7 @@
                                 </goals>
                             </execution>
 
-                            pre-integration-test: wait for the application to start                                    
+                            <!-- pre-integration-test: wait for the application to start -->                                    
                             <execution>
                                 <id>wait-for-application-to-start</id>
                                 <phase>pre-integration-test</phase>
@@ -328,7 +328,7 @@
                                 </goals>
                              </execution>
                     
-                            post-integration-test: Stop the application
+                            <!-- post-integration-test: Stop the application -->
                             <execution>
                                 <id>shutdown-application</id>
                                 <phase>post-integration-test</phase>
@@ -347,7 +347,7 @@
                                 </goals>
                             </execution>
                         </executions>
-                    </plugin> -->
+                    </plugin>
                     
   				</plugins>
   			
